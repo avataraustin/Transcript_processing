@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-import re
+
 
 '''
 This script takes a folder (make sure to change transcript_dir folder name) 
