@@ -6,4 +6,4 @@ containing .txt transcript files that are typically very long and do not contain
 any periods to separate the file into any sort of sentence structure. This script 
 guesses at a reasonable sentence structure by adding periods before the word "I" 
 which seems to do a reasonable job creating logical sentence structure. It is 
-then more suitable for use with embeddings.
+then perhaps a bit more suitable for use with embeddings.
