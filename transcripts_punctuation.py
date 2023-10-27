@@ -4,11 +4,13 @@ from pathlib import Path
 
 '''
 This script takes a folder (make sure to change transcript_dir folder name) 
-containing .txt transcript files that are typically very long and do not contain 
-any periods to separate the file into any sort of sentence structure. This script 
-guesses at a reasonable sentence structure by adding periods before the word "I" 
-which seems to do a reasonable job creating logical sentence structure. It is 
-then more suitable for use with embeddings.
+containing .txt transcript generated from the scrape_transcripts.py script,
+files that are typically very long and do not contain any periods to separate the 
+file into any sort of sentence structure. This script guesses at a reasonable sentence 
+structure by adding periods before common words that indicate a new sentence,
+which seems to do a reasonable job creating logical sentence structure. It then attempts
+to create markdown headings to split the text up into markdown titled chunks. 
+It is then more suitable for use with embeddings software such as Obsidian Smart Connections.
 '''
 
 def structure_transcripts():
