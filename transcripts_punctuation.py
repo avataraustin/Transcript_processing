@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+import re
 
 '''
 This script takes a folder (make sure to change transcript_dir folder name) 
@@ -39,12 +40,24 @@ def structure_transcripts():
             # join the modified list of words back into a single string
             modified_text = " ".join(words)     ##### may want to add a newline ####
             
+            # take the modified_text and after every 5th "." add a "\n" newline and "#### Structure" heading
+            s_modified_text = ""
+            count = 0
+            for i in modified_text:
+                if i == "." and count != 0 and count % 5 == 0:
+                    s_modified_text += ".\n\n##### Structure\n\n"
+                if i == ".":
+                    count += 1
+                else:
+                    s_modified_text += i
+
+
             #write the modified string to a new .md file
             new_filename = os.path.splitext(filename)[0] + ".md"
 
             #write the modified string back to the text file (as a .md file in this case)
             with open(os.path.join(destination_dir,new_filename), "w") as file:
-                file.write(modified_text)
+                file.write(s_modified_text)
             
 if __name__ == '__main__':
     structure_transcripts()
