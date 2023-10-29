@@ -35,19 +35,19 @@ def structure_transcripts():
             filter_words = ["I","We","we","these","These","Here","here","There","there","I'll","i","i'll"]
             # iterate through the list of words
             for i in range(len(words) -1):
-                if words[i] in filter_words and words[i-1]: ###### hoping this selects previous word #####
+                if words[i] in filter_words and words[i-1]: 
                     #add a period to the preceding words end
                     words[i-1] += "."
             
             # join the modified list of words back into a single string
-            modified_text = " ".join(words)     ##### may want to add a newline ####
+            modified_text = " ".join(words)     
             
             # take the modified_text and after every 5th "." add a "\n" newline and "#### Structure" heading
             s_modified_text = ""
             count = 0
             for i in modified_text:
                 if i == "." and count != 0 and count % 5 == 0:
-                    s_modified_text += ".\n\n##### Structure\n\n"
+                    s_modified_text += ".\n\n##### Structured Dr. Berg\n\n" # Can change name of Headings here
                 if i == ".":
                     count += 1
                 else:
