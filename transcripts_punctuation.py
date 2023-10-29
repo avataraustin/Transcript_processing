@@ -47,7 +47,7 @@ def structure_transcripts():
             count = 0
             for i in modified_text:
                 if i == "." and count != 0 and count % 5 == 0:
-                    s_modified_text += ".\n\n##### Structured Dr. Berg\n\n" # Can change name of Headings here
+                    s_modified_text += ".\n\n##### Structured\n\n" # Can change name of Headings here
                 if i == ".":
                     count += 1
                 else:
